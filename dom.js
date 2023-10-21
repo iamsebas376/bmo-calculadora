@@ -6,32 +6,32 @@ botones.forEach((boton) => {
   boton.addEventListener('click', () => {
     const botonApretado = boton.textContent;
 
-    if (boton.id === "c") {
-      pantalla.textContent = ". ___ .";
+    if (boton.id === 'c') {
+      pantalla.textContent = '. ___ .';
       return;
     }
 
-    if (boton.id === "borrar") {
-      if (pantalla.textContent.length === 1 || pantalla.textContent === "Error") {
-        pantalla.textContent = ". ___ .";
-      } else if (pantalla.textContent === ". ___ .") {
-        pantalla.textContent = ". ___ .";
+    if (boton.id === 'borrar') {
+      if (pantalla.textContent.length === 1 || pantalla.textContent === "Error" || pantalla.textContent === 'Infinity') {
+        pantalla.textContent = '. ___ .';
+      } else if (pantalla.textContent === '. ___ .') {
+        pantalla.textContent = '. ___ .';
       } else {
         pantalla.textContent = pantalla.textContent.slice(0, -1);
       }
       return;
     }
 
-    if (boton.id === "igual") {
+    if (boton.id === 'igual') {
       try {
         pantalla.textContent = eval(pantalla.textContent);
       } catch {
-        pantalla.textContent = "Error";
+        pantalla.textContent = 'Error';
       }
       return;
     }
 
-    if (pantalla.textContent === ". ___ ." || pantalla.textContent === "Error") {
+    if (pantalla.textContent === '. ___ .' || pantalla.textContent === 'Error' || pantalla.textContent === 'Infinity') {
       pantalla.textContent = botonApretado;
     } else {
       pantalla.textContent += botonApretado;
