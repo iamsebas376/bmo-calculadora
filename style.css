@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(img/fondo-light.jpg);
+    transition: .3s ease all;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+body.dark {
+    background-image: url(img/fondo-dark.jpg);
+    transition: .3s ease all;
+}
+
+.calculadora {
+    background-color: rgb(70, 181, 153);
+    transition: .3s ease all;
+    color: black;
+    width: 70%;
+    max-width: 100%;
+    padding: 22.4px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .calculadora {
+        width: 90%;
+    }
+}
+
+body.dark .calculadora {
+    background-color: rgb(47, 119, 101);
+    transition: .3s ease all;
+}
+
+.pantalla {
+    grid-column: 1/ 5;
+    background-color: rgb(184, 255, 199);
+    padding: 24px;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-family: monospace;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+body.dark .pantalla {
+    background-color: rgb(147, 204, 159);
+}
+
+.btn {
+    background-color: rgb(67, 155, 132);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 24px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+body.dark .btn {
+    background-color: rgb(62, 141, 120);
+}
+
+.btn:hover {
+    background-color: rgb(44, 103, 88);
+}
+
+body.dark .btn:hover {
+    background-color: rgb(33, 78, 67);
+}
+
+#c {
+    background-color: rgb(5, 227, 214);
+}
+
+body.dark #c {
+    background-color: rgb(4, 179, 167);
+}
+
+#c:hover {
+    background-color: rgb(0, 137, 128);
+}
+
+body.dark #c:hover {
+    background-color: rgb(1, 105, 98);
+}
+
+#borrar {
+    background-color: rgb(3, 15, 112);
+}
+
+body.dark #borrar {
+    background-color: rgb(2, 12, 83);
+}
+
+#borrar:hover {
+    background-color: rgb(1, 8, 60);
+}
+
+body.dark #borrar:hover {
+    background-color: rgb(2, 10, 66);
+}
+
+#cero {
+    grid-column: span 2;
+    background-color: rgb(254, 217, 28);
+}
+
+body.dark #cero {
+    background-color: rgb(204, 174, 24);
+}
+
+#cero:hover {
+    background-color: rgb(203, 173, 22);
+}
+
+body.dark #cero:hover {
+    background-color: rgb(163, 139, 19);
+}
+
+#igual {
+    grid-row: span 2;
+    background-color: rgb(236, 12, 90);
+}
+
+body.dark #igual {
+    background-color: rgb(180, 12, 71);
+}
+
+#igual:hover {
+    background-color: rgb(185, 9, 70);
+}
+
+body.dark #igual:hover {
+    background-color: rgb(139, 9, 55);
+}
+
+.switch {
+    background: rgb(70, 181, 153);
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: rgb(184, 255, 199);
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+
+body.dark .switch::after {
+    background: rgb(147, 204, 159);
+}
+
+.active {
+    background-color: rgb(47, 119, 101);
+}
+
+.active::after {
+    right: 0;
+    left: unset;
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: white;
+
+}
