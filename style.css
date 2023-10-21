@@ -161,6 +161,12 @@ body.dark #igual:hover {
     outline: none;
 }
 
+@media (max-width: 768px) {
+    .switch {
+        margin-top: -40px;
+    }
+}
+
 .switch::after {
     content: "";
     display: block;
